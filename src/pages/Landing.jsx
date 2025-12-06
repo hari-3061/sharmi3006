@@ -2,13 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Leaf, Mail, Smartphone, Recycle } from "lucide-react";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";   // ⬅️ ADD
 
 export default function Landing() {
+
+  const navigate = useNavigate(); // ⬅️ ADD
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
       <Navbar />
 
-      <div className="pt-28 px-10 flex flex-col md:flex-row items-center justify-between">
+      <div className="px-10 pt-28 md:flex-row flex flex-col items-center justify-between">
+
         {/* LEFT SECTION */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -17,7 +22,7 @@ export default function Landing() {
           className="max-w-xl"
         >
           <h1 className="text-5xl font-extrabold text-green-700 leading-tight">
-            Smart E-Waste Collection & Management
+            Smart E-Waste <br /> Collection & Management
           </h1>
 
           <p className="mt-4 text-lg text-gray-700">
@@ -26,19 +31,22 @@ export default function Landing() {
           </p>
 
           <div className="flex gap-4 mt-6">
-            <a
-              href="/register"
+
+            {/* REGISTER BUTTON */}
+            <button
+              onClick={() => navigate("/userregister")}
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-md font-semibold"
             >
               Register Now
-            </a>
+            </button>
 
-            <a
-              href="/login"
+            {/* LOGIN BUTTON */}
+            <button
+              onClick={() => navigate("/userlogin")}
               className="border border-green-600 text-green-700 hover:bg-green-100 px-6 py-3 rounded-xl shadow-md font-semibold"
             >
               Login
-            </a>
+            </button>
           </div>
         </motion.div>
 
