@@ -15,8 +15,14 @@ export default function UserRegister() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("User Data:", form);
+    alert("Registration Successful!");
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-200 pt-28">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-200 pt-24">
       <Navbar />
 
       <motion.div
@@ -29,37 +35,58 @@ export default function UserRegister() {
           <h2 className="text-3xl font-bold text-green-700">User Registration</h2>
         </div>
 
-        <div className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
+
+          {/* FULL NAME */}
           <input
             name="fullName"
             placeholder="Full Name"
             className="w-full p-3 rounded-lg border"
             onChange={handleChange}
+            value={form.fullName}
+            required
           />
+
+          {/* EMAIL */}
           <input
             name="email"
+            type="email"
             placeholder="Email"
             className="w-full p-3 rounded-lg border"
             onChange={handleChange}
+            value={form.email}
+            required
           />
+
+          {/* PASSWORD */}
+          <input
+            name="password"
+            type="password"
+            placeholder="Create Password"
+            className="w-full p-3 rounded-lg border"
+            onChange={handleChange}
+            value={form.password}
+            required
+          />
+
+          {/* PHONE */}
           <input
             name="phone"
             placeholder="Phone Number"
             className="w-full p-3 rounded-lg border"
             onChange={handleChange}
-          />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            className="w-full p-3 rounded-lg border"
-            onChange={handleChange}
+            value={form.phone}
+            required
           />
 
-          <button className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl shadow-md font-semibold">
+          {/* SUBMIT BUTTON */}
+          <button
+            type="submit"
+            className="bg-green-600 hover:bg-green-700 text-white w-full py-3 rounded-xl font-semibold shadow-lg"
+          >
             Register
           </button>
-        </div>
+        </form>
       </motion.div>
     </div>
   );
