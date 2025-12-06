@@ -1,31 +1,25 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
+// Pages
 import Landing from "./pages/Landing";
-import UserLogin from "./pages/UserLogin";
 import UserRegister from "./pages/UserRegister";
+import UserLogin from "./pages/UserLogin";
 import AdminLogin from "./pages/AdminLogin";
-import UserDashboard from "./pages/UserDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import UserDashboard from "./pages/UserDashboard";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-
-      <div className="min-h-screen bg-gray-50">
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/user-login" element={<UserLogin />} />
-          <Route path="/user-register" element={<UserRegister />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
-          <Route path="/user-dashboard" element={<UserDashboard />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        </Routes>
-      </div>
-
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/userregister" element={<UserRegister />} />
+        <Route path="/userlogin" element={<UserLogin />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
+      </Routes>
     </BrowserRouter>
   );
 }
