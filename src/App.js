@@ -13,16 +13,18 @@ import UserDashboard from "./pages/UserDashboard";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/userregister" element={<UserRegister />} />
-        <Route path="/userlogin" element={<UserLogin />} />
-        <Route path="/adminlogin" element={<AdminLogin />} />
-        <Route path="/admindashboard" element={<AdminDashboard />} />
-        <Route path="/userdashboard" element={<UserDashboard />} />
-        
-      </Routes>
-    </BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Landing />} />
+    <Route path="/userregister" element={<UserRegister />} />
+    <Route path="/userlogin" element={<UserLogin />} />
+    <Route path="/forgotpassword" element={<ForgotPassword />} />
+
+    <Route path="/adminlogin" element={<AdminLogin />} />
+    <Route path="/admindashboard" element={<AdminDashboard />} />
+    <Route path="/userdashboard" element={<UserDashboard />} />
+  </Routes>
+</BrowserRouter>
+
   );
 }
 
