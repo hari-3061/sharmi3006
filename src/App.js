@@ -8,8 +8,7 @@ import UserLogin from "./pages/UserLogin";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
-import ForgotPassword from "./pages/ForgotPassword";
-import UserLogin from "./pages/UserLogin";   // If not added earlier
+
 
 function App() {
   return (
@@ -21,9 +20,7 @@ function App() {
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
-        <Route path="/userlogin" element={<UserLogin />} /> 
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-
+        
       </Routes>
     </BrowserRouter>
   );
