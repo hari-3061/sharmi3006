@@ -1,32 +1,40 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-export default function ForgotPassword() {
+export default function VerifyOTP() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const location = useLocation();
+  const email = location.state?.email;
+
+  const [otp, setOtp] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/verify-otp", { state: { email } });
+    navigate("/reset-password", { state: { email } });
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md">
         <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">
-          Forgot Password
+          Verify OTP
         </h2>
+
+        <p className="text-center text-gray-600 mb-4">
+          OTP sent to: <strong>{email}</strong>
+        </p>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label className="text-gray-700 font-medium">Enter Email</label>
+            <label className="text-gray-700 font-medium">Enter OTP</label>
             <input
-              type="email"
+              type="text"
+              maxLength={6}
               className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none 
-                         focus:ring focus:ring-green-300"
-              placeholder="Enter your registered email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+                         focus:ring focus:ring-green-300 text-center tracking-widest text-xl"
+              placeholder="______"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
               required
             />
           </div>
@@ -36,7 +44,7 @@ export default function ForgotPassword() {
             className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg 
                        font-semibold shadow-md mt-2"
           >
-            Get OTP
+            Verify OTP
           </button>
         </form>
       </div>
