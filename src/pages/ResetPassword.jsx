@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function ResetPassword() {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const email = location.state?.email;
 
   const [password, setPassword] = useState("");
@@ -17,6 +19,9 @@ export default function ResetPassword() {
     }
 
     alert("Password Reset Successful!");
+
+    // Redirect user to login page
+    navigate("/userlogin");
   };
 
   return (
