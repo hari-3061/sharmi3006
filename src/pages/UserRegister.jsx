@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function UserRegister() {
   const [password, setPassword] = useState("");
   const [showRules, setShowRules] = useState(false);
+  const [phone, setPhone] = useState("");
 
   // Password validation rules
   const rules = {
@@ -82,10 +85,23 @@ export default function UserRegister() {
           {/* Phone Number */}
           <div>
             <label className="text-gray-700 font-medium">Phone Number</label>
-            <input
-              type="text"
-              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-300"
-              placeholder="Enter phone number"
+
+            <PhoneInput
+              country={"in"}
+              value={phone}
+              onChange={(value) => setPhone(value)}
+              inputStyle={{
+                width: "100%",
+                height: "48px",
+                borderRadius: "8px",
+                paddingLeft: "48px",
+                border: "1px solid #d1d5db",
+                fontSize: "16px",
+              }}
+              buttonStyle={{
+                border: "1px solid #d1d5db",
+                borderRadius: "8px 0 0 8px",
+              }}
             />
           </div>
 
