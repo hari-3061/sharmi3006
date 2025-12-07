@@ -1,53 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// Pages
+import Landing from "./pages/Landing";
+import UserRegister from "./pages/UserRegister";
+import UserLogin from "./pages/UserLogin";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserDashboard from "./pages/UserDashboard";
 
 function App() {
   return (
-    <Router>
-      <div>
-        {/* NAVBAR */}
-        <nav className="navbar">
-          <div className="logo">Smart E-Waste</div>
-
-          <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/login">User Login</Link>
-            <Link to="/admin">Admin</Link>
-          </div>
-        </nav>
-
-        {/* ROUTES */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-         <Route path="/userlogin" element={<LoginPage />} />
-         <Route path="/userregister" element={<RegisterPage />} />
-
-        </Routes>
-      </div>
-    </Router>
-  );
-}
-
-function Home() {
-  return (
-    <div className="home-container">
-      <h1>Smart E-Waste Collection & Management</h1>
-      <p>
-        A clean, sustainable, and user-friendly platform to submit your
-        e-waste details and help build a greener future.
-      </p>
-
-      <Link to="/register">
-        <button className="btn1">Register Now</button>
-      </Link>
-
-      <Link to="/login">
-        <button className="btn2">Login</button>
-      </Link>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/userregister" element={<UserRegister />} />
+        <Route path="/userlogin" element={<UserLogin />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
