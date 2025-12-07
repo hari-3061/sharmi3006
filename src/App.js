@@ -1,16 +1,19 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Pages
+// Main Pages
 import Landing from "./pages/Landing";
 import UserRegister from "./pages/UserRegister";
 import UserLogin from "./pages/UserLogin";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
-import ForgotPassword from "./pages/ForgotPasswor"
-import VerifyOTP from "./pages/VerifyOTP";
-import ResetPassword from "./pages/ResetPassword";
+
+// Forgot Password Flow Pages
+import ForgotPassword from "./pages/ForgotPassword.jsx";
+import VerifyOTP from "./pages/VerifyOTP.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
+
 
 function App() {
   return (
@@ -36,4 +39,3 @@ function App() {
 }
 
 export default App;
-
