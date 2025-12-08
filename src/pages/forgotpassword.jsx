@@ -22,8 +22,8 @@ export default function ForgotPassword() {
             <label className="text-gray-700 font-medium">Enter Email</label>
             <input
               type="email"
-              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none 
-                         focus:ring focus:ring-green-300"
+              className="w-full mt-1 px-4 py-2 border rounded-lg 
+                focus:outline-none focus:ring focus:ring-green-300"
               placeholder="Enter your registered email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -33,8 +33,8 @@ export default function ForgotPassword() {
 
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg 
-                       font-semibold shadow-md mt-2"
+            className="w-full bg-green-600 hover:bg-green-700 
+              text-white py-3 rounded-lg font-semibold shadow-md mt-2"
           >
             Get OTP
           </button>
