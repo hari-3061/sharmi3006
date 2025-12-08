@@ -12,6 +12,7 @@ export default function UserLogin() {
           User Login
         </h2>
 
+        {/* Email */}
         <div className="mb-4">
           <label className="block text-sm font-semibold">Email</label>
           <input
@@ -23,6 +24,7 @@ export default function UserLogin() {
           />
         </div>
 
+        {/* Password */}
         <div className="mb-4">
           <label className="block text-sm font-semibold">Password</label>
           <input
@@ -34,12 +36,17 @@ export default function UserLogin() {
           />
         </div>
 
+        {/* Forgot Password link */}
         <div className="text-right mb-4">
-          <Link to="/forgotpassword" className="text-blue-600 hover:underline">
+          <Link
+            to="/forgot-password"
+            className="text-blue-600 hover:underline"
+          >
             Forgot Password?
           </Link>
         </div>
 
+        {/* Login Button */}
         <button className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700">
           Login
         </button>
@@ -47,3 +54,4 @@ export default function UserLogin() {
     </div>
   );
 }
+
