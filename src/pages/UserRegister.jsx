@@ -11,6 +11,7 @@ export default function UserRegister() {
   // NEW STATES
   const [address, setAddress] = useState("");
   const [dob, setDob] = useState("");
+  const [gender, setGender] = useState("");
 
   // Password validation rules
   const rules = {
@@ -29,7 +30,7 @@ export default function UserRegister() {
         </h2>
 
         <form className="space-y-4">
-
+          
           {/* Full Name */}
           <div>
             <label className="text-gray-700 font-medium">Full Name</label>
@@ -64,24 +65,14 @@ export default function UserRegister() {
               onBlur={() => setShowRules(false)}
             />
 
-            {/* Password Rules Box */}
+            {/* Password Rules */}
             {showRules && (
               <div className="mt-2 p-3 bg-gray-50 border rounded-lg text-sm">
-                <p className={rules.length ? "text-green-600" : "text-red-600"}>
-                  • At least 8 characters
-                </p>
-                <p className={rules.upper ? "text-green-600" : "text-red-600"}>
-                  • At least one uppercase letter (A–Z)
-                </p>
-                <p className={rules.lower ? "text-green-600" : "text-red-600"}>
-                  • At least one lowercase letter (a–z)
-                </p>
-                <p className={rules.number ? "text-green-600" : "text-red-600"}>
-                  • At least one number (0–9)
-                </p>
-                <p className={rules.special ? "text-green-600" : "text-red-600"}>
-                  • At least one special character (!@#$%^&*)
-                </p>
+                <p className={rules.length ? "text-green-600" : "text-red-600"}>• At least 8 characters</p>
+                <p className={rules.upper ? "text-green-600" : "text-red-600"}>• One uppercase letter</p>
+                <p className={rules.lower ? "text-green-600" : "text-red-600"}>• One lowercase letter</p>
+                <p className={rules.number ? "text-green-600" : "text-red-600"}>• One number</p>
+                <p className={rules.special ? "text-green-600" : "text-red-600"}>• One special character</p>
               </div>
             )}
           </div>
@@ -109,7 +100,7 @@ export default function UserRegister() {
             />
           </div>
 
-          {/* Address (NEW) */}
+          {/* Address */}
           <div>
             <label className="text-gray-700 font-medium">Address</label>
             <textarea
@@ -121,7 +112,7 @@ export default function UserRegister() {
             ></textarea>
           </div>
 
-          {/* Date of Birth (NEW) */}
+          {/* Date of Birth */}
           <div>
             <label className="text-gray-700 font-medium">Date of Birth</label>
             <input
@@ -133,6 +124,47 @@ export default function UserRegister() {
             />
           </div>
 
+          {/* Gender (NEW) */}
+          <div>
+            <label className="text-gray-700 font-medium">Gender</label>
+            <div className="flex items-center space-x-4 mt-2">
+
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Male"
+                  className="w-4 h-4"
+                  onChange={(e) => setGender(e.target.value)}
+                />
+                <span>Male</span>
+              </label>
+
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Female"
+                  className="w-4 h-4"
+                  onChange={(e) => setGender(e.target.value)}
+                />
+                <span>Female</span>
+              </label>
+
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Other"
+                  className="w-4 h-4"
+                  onChange={(e) => setGender(e.target.value)}
+                />
+                <span>Other</span>
+              </label>
+
+            </div>
+          </div>
+
           {/* Submit Button */}
           <button
             type="submit"
@@ -140,6 +172,7 @@ export default function UserRegister() {
           >
             Register
           </button>
+
         </form>
       </div>
     </div>
