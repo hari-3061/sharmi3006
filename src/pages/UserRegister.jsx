@@ -8,6 +8,10 @@ export default function UserRegister() {
   const [showRules, setShowRules] = useState(false);
   const [phone, setPhone] = useState("");
 
+  // NEW STATES
+  const [address, setAddress] = useState("");
+  const [dob, setDob] = useState("");
+
   // Password validation rules
   const rules = {
     length: password.length >= 8,
@@ -102,6 +106,30 @@ export default function UserRegister() {
                 border: "1px solid #d1d5db",
                 borderRadius: "8px 0 0 8px",
               }}
+            />
+          </div>
+
+          {/* Address (NEW) */}
+          <div>
+            <label className="text-gray-700 font-medium">Address</label>
+            <textarea
+              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-300"
+              rows="3"
+              placeholder="Enter your address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            ></textarea>
+          </div>
+
+          {/* Date of Birth (NEW) */}
+          <div>
+            <label className="text-gray-700 font-medium">Date of Birth</label>
+            <input
+              type="date"
+              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-300"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
+              max={new Date().toISOString().split("T")[0]}
             />
           </div>
 
