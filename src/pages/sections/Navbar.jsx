@@ -1,14 +1,15 @@
-// src/pages/sections/Navbar.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Leaf, Recycle } from "lucide-react";
+import { Recycle, Leaf } from "lucide-react";
 
 export default function Navbar() {
   const navigate = useNavigate();
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-md">
+      
+      {/* Decorative icons */}
       <motion.div
         className="absolute left-10 top-20 text-green-400 opacity-30"
         animate={{ y: [0, 10, 0] }}
@@ -24,6 +25,7 @@ export default function Navbar() {
         <Recycle size={32} />
       </motion.div>
 
+      {/* Navbar content */}
       <div className="flex justify-between items-center px-10 py-4 relative">
         <motion.div
           className="flex items-center gap-2"
@@ -31,7 +33,7 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
         >
           <Recycle className="text-green-600" size={32} />
-          <h1 className="text-2xl font-bold text-green-700">E-Waste</h1>
+          <h1 className="text-2xl font-bold text-green-700">Smart E-Waste</h1>
         </motion.div>
 
         <motion.ul
@@ -42,7 +44,6 @@ export default function Navbar() {
           <li><a href="/">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#howitworks">How It Works</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#blog">Blog</a></li>
@@ -55,6 +56,7 @@ export default function Navbar() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
         >
+          {/* User login/register */}
           <button
             onClick={() => navigate("/userlogin")}
             className="px-5 py-2 border border-green-600 text-green-700 hover:bg-green-100 rounded-lg font-medium transition"
@@ -67,6 +69,14 @@ export default function Navbar() {
             className="px-5 py-2 bg-green-600 text-white hover:bg-green-700 rounded-lg font-medium shadow-md transition"
           >
             Register
+          </button>
+
+          {/* Admin login */}
+          <button
+            onClick={() => navigate("/adminlogin")}
+            className="px-5 py-2 border border-red-600 text-red-600 hover:bg-red-100 rounded-lg font-medium transition"
+          >
+            Admin
           </button>
         </motion.div>
       </div>

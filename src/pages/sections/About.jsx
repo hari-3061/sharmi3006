@@ -1,30 +1,15 @@
-import { motion } from "framer-motion";
+import React from "react";
 
 export default function About() {
   return (
-    <section id="about" className="about-section">
-      <motion.div
-        className="about-container"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="about-text">
-          <h2>About Our Mission</h2>
-          <p>
-            We are dedicated to promoting responsible e-waste recycling and
-            encouraging a cleaner, greener environment through awareness and
-            accessibility.
-          </p>
-        </div>
-
-        <div className="about-image">
-          <img
-            src="https://cdn3d.iconscout.com/3d/premium/thumb/recycling-earth-3d-icon-download-in-png-blend-fbx-gltf-file-formats--save-the-planet-ecology-environmental-conservation-pack-icons-10255086.png"
-            alt="Eco Illustration"
-          />
-        </div>
-      </motion.div>
+    <section id="about" className="px-10 py-20">
+      <h2 className="text-4xl font-bold text-green-700 text-center">About Us</h2>
+      <p className="text-gray-700 text-center mt-4 max-w-3xl mx-auto">
+        Our E-Waste Management System connects citizens with eco-responsible
+        recycling services. Users can submit e-waste details and track pickup
+        schedules, while admins coordinate smart waste management for a
+        cleaner future.
+      </p>
     </section>
   );
 }
